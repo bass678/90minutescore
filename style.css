@@ -1,0 +1,298 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+}
+
+.main-header {
+    background-color: #a52a2a; /* Dark Red from image */
+    color: white;
+    padding: 15px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.container {
+    max-width: 900px;
+    margin: 20px auto;
+    background: white;
+}
+
+/* League Styling */
+.league-header {
+    background-color: #333;
+    color: white;
+    padding: 10px;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+}
+
+.match-row {
+    display: grid;
+    grid-template-columns: 60px 1fr 50px 50px 50px 50px;
+    border-bottom: 1px solid #ddd;
+    align-items: center;
+    padding: 10px;
+    font-size: 14px;
+}
+
+.header-row {
+    background: #eee;
+    font-weight: bold;
+}
+
+.teams {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-dots span {
+    display: inline-block;
+    width: 18px;
+    height: 18px;
+    border-radius: 3px;
+    text-align: center;
+    font-size: 10px;
+    color: white;
+    margin-right: 2px;
+}
+
+.w { background: green; }
+.l { background: red; }
+.d { background: orange; }
+
+.pick {
+    text-align: center;
+    background: #f0f0f0;
+    font-weight: bold;
+}
+
+/* Mobile Responsive */
+@media (max-width: 600px) {
+    .match-row {
+        grid-template-columns: 50px 1fr 40px 40px 40px;
+    }
+}
+.main-footer {
+    background-color: #222; /* Darker than the header for contrast */
+    color: #bbb;
+    padding: 40px 0 0;
+    margin-top: 50px;
+    font-size: 14px;
+}
+
+.footer-container {
+    max-width: 1100px;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 0 20px;
+}
+
+.footer-section {
+    flex: 1;
+    min-width: 250px;
+    margin-bottom: 30px;
+}
+
+.footer-logo {
+    color: white;
+    margin-bottom: 15px;
+}
+
+.footer-logo span {
+    color: #a52a2a; /* Matching your red brand color */
+}
+
+.footer-section h3 {
+    color: white;
+    margin-bottom: 20px;
+    font-size: 18px;
+}
+
+.footer-section ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-section ul li {
+    margin-bottom: 10px;
+}
+
+.footer-section ul li a {
+    color: #bbb;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.footer-section ul li a:hover {
+    color: #a52a2a;
+}
+
+/* Social Icons */
+.social-icons a {
+    display: inline-block;
+    width: 35px;
+    height: 35px;
+    background: #444;
+    color: white;
+    text-align: center;
+    line-height: 35px;
+    border-radius: 5px;
+    margin-right: 10px;
+    text-decoration: none;
+}
+
+.social-icons a:hover {
+    background: #a52a2a;
+}
+
+/* Bottom Copyright Bar */
+.footer-bottom {
+    background: #111;
+    text-align: center;
+    padding: 20px;
+    margin-top: 20px;
+    color: #777;
+    border-top: 1px solid #333;
+}
+
+/* Mobile Responsive Footer */
+@media (max-width: 768px) {
+    .footer-container {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .footer-section {
+        margin-bottom: 40px;
+    }
+
+    .social-icons {
+        justify-content: center;
+        display: flex;
+    }
+}
+/* Predict Button Styling */
+.predict-btn {
+    background-color: #a52a2a;
+    color: white;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+/* Modal Overlay (Background) */
+.modal-overlay {
+    display: none; /* Hidden by default */
+    position: fixed;
+    z-index: 2000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.7); /* Dark background */
+}
+
+/* Modal Content Box */
+.modal-content {
+    background-color: white;
+    margin: 5% auto;
+    padding: 20px;
+    border-radius: 10px;
+    width: 90%;
+    max-width: 500px;
+    position: relative;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+}
+
+/* Close Button */
+.close-btn {
+    position: absolute;
+    right: 20px;
+    top: 10px;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.close-btn:hover { color: #a52a2a; }
+.blog-container {
+    max-width: 900px;
+    margin: 40px auto;
+    padding: 0 20px;
+}
+
+.section-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+/* The Carousel Wrapper */
+.blog-carousel {
+    display: flex;
+    overflow-x: auto;
+    gap: 20px;
+    scroll-behavior: smooth;
+    scroll-snap-type: x mandatory;
+    padding-bottom: 15px;
+}
+
+/* Hide Scrollbar for Chrome/Safari */
+.blog-carousel::-webkit-scrollbar { display: none; }
+
+/* Individual Blog Card */
+.blog-card {
+    flex: 0 0 280px; /* Width of cards on desktop */
+    background: white;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    scroll-snap-align: start;
+    position: relative;
+}
+
+.blog-badge {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    background: #a52a2a;
+    color: white;
+    padding: 4px 8px;
+    font-size: 11px;
+    border-radius: 3px;
+    text-transform: uppercase;
+}
+
+.blog-card img { width: 100%; height: 160px; object-fit: cover; }
+
+.blog-content { padding: 15px; }
+
+.blog-content h3 { font-size: 16px; margin: 0 0 10px; color: #333; }
+
+.blog-content p { font-size: 13px; color: #666; line-height: 1.4; }
+
+.read-more { color: #a52a2a; text-decoration: none; font-weight: bold; font-size: 12px; }
+
+/* Carousel Buttons */
+.carousel-controls button {
+    background: #eee;
+    border: none;
+    padding: 5px 12px;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 18px;
+}
+
+.carousel-controls button:hover { background: #ddd; }
+
+/* Mobile Adjustments */
+@media (max-width: 600px) {
+    .blog-card { flex: 0 0 85%; } /* Show almost full card on mobile */
+}
