@@ -1,0 +1,36 @@
+backend:
+  name: git-gateway
+  branch: main # Ensure this matches your GitHub branch name
+
+media_folder: "assets/images" # Where your uploaded photos will go
+public_folder: "/assets/images"
+
+collections:
+  # 1. BLOG COLLECTION (For your Carousel)
+  - name: "blog"
+    label: "Blog Posts"
+    folder: "content/blog" # Where the files will be saved on GitHub
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - {label: "Title", name: "title", widget: "string"}
+      - {label: "Publish Date", name: "date", widget: "datetime"}
+      - {label: "Badge", name: "badge", widget: "select", options: ["Analysis", "Transfer News", "Daily Tips"]}
+      - {label: "Featured Image", name: "image", widget: "image"}
+      - {label: "Summary", name: "summary", widget: "text"}
+      - {label: "Body", name: "body", widget: "markdown"}
+
+  # 2. PREDICTIONS COLLECTION (For your Match Table)
+  - name: "predictions"
+    label: "Match Predictions"
+    folder: "content/predictions"
+    create: true
+    fields:
+      - {label: "League Name", name: "league", widget: "string", default: "Ghana Premier League"}
+      - {label: "Match Time", name: "time", widget: "string", placeholder: "16:00"}
+      - {label: "Home Team", name: "home_team", widget: "string"}
+      - {label: "Away Team", name: "away_team", widget: "string"}
+      - {label: "Odds 1", name: "odds_1", widget: "string"}
+      - {label: "Odds X", name: "odds_x", widget: "string"}
+      - {label: "Odds 2", name: "odds_2", widget: "string"}
+      - {label: "Your Pick", name: "pick", widget: "select", options: ["1", "X", "2"]}
